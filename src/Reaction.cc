@@ -455,9 +455,7 @@ TVector3 MiniballReaction::GetCDVector( unsigned char det, unsigned char sec, fl
 	
 	// Create a TVector3 to handle the angles
 	float x = 9.0;
-	if( set->GetNumberOfCDNStrips() == 12 ) 		// standard CD
-		x += ( 15.5 - pid + std::floor(pid) - std::ceil(pid) ) * 2.0;
-	else if( set->GetNumberOfCDNStrips() == 16 )	// CREX and TREX
+	if( set->GetNumberOfCDNStrips() == 16 )	// CREX and TREX
 		x += ( pid + 0.5 ) * 2.0;
 
 	TVector3 vec( x, 0, cd_dist[det] ); // set z now
