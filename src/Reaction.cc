@@ -784,8 +784,7 @@ void MiniballReaction::IdentifyEjectile( std::shared_ptr<ParticleEvt> p, bool ki
 	double eloss = 0;
 	if( stopping && doppler_mode > 2 ) {
 		eloss  = GetEnergyLoss( p->GetEnergy(), -1.0 * dead_layer[p->GetDetector()], gStopping[2] ); // ejectile in dead layer
-		eloss += GetEnergyLoss( p->GetEnergy() - eloss, -0.5 * target_thickness, gStopping[0] ); // ejectile in target
-	}
+		}
 	Ejectile.SetEnergy( p->GetEnergy() - eloss ); // eloss is negative
 	Ejectile.SetTheta( GetParticleTheta(p) );
 	Ejectile.SetPhi( GetParticlePhi(p) );
@@ -839,7 +838,6 @@ void MiniballReaction::IdentifyRecoil( std::shared_ptr<ParticleEvt> p, bool kinf
 	double eloss = 0;
 	if( stopping && doppler_mode > 2 ) {
 		eloss  = GetEnergyLoss( p->GetEnergy(), -1.0 * dead_layer[p->GetDetector()], gStopping[3] ); // recoil in dead layer
-		eloss += GetEnergyLoss( p->GetEnergy() - eloss, -0.5 * target_thickness, gStopping[1] ); // recoil in target
 	}
 	Recoil.SetEnergy( p->GetEnergy() - eloss ); // eloss is negative to add back the dead layer energy
 	Recoil.SetTheta( GetParticleTheta(p) );
