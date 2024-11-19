@@ -343,7 +343,7 @@ void MiniballReaction::ReadReaction() {
 	cd_dist.resize( set->GetNumberOfCDDetectors() );
 	cd_offset.resize( set->GetNumberOfCDDetectors() );
 	dead_layer.resize( set->GetNumberOfCDDetectors() );
-	double d_tmp;
+	double d_tmp = 32.0;
 	for( unsigned int i = 0; i < set->GetNumberOfCDDetectors(); ++i ) {
 	
 		if( i == 0 ) d_tmp = 32.0; // standard CD
